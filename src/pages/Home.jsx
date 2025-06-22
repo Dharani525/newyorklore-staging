@@ -134,7 +134,7 @@
 
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import StoriesCard from "../components/storiesCard";
+import StoriesCard from "../components/StoriesCard";
 import { deletestories, getAllstories } from "../api/CRUD";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000'; // Change this to your JSON server URL
+const API_BASE_URL = import.meta.env.VITE_API_URL; // Change this to your JSON server URL
 const API_ENDPOINT = `${API_BASE_URL}/stories`;
 
 // CREATE - Add a new stories

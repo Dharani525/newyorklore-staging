@@ -18,9 +18,10 @@ export const addstories = async (storiesData) => {
         body: storiesData.body,
         badge: storiesData.badge,
         media: storiesData.media ? {
-          fileData: storiesData.media.fileData,
-          fileName: storiesData.media.fileName,
-          fileType: storiesData.media.fileType
+          publicId: storiesData.media.publicId,
+          url: storiesData.media.url,
+          fileType: storiesData.media.fileType,
+          format: storiesData.media.format
         } : null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),

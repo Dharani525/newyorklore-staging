@@ -163,7 +163,7 @@ const StoryDetails = () => {
                     <div className="mb-4">
                         {story.media.fileType.match('image.*') ? (
                             <img
-                                src={story.media.fileData}
+                                src={story.media.url}
                                 alt="Story media"
                                 className="w-full h-auto rounded-md"
                             />
@@ -171,7 +171,7 @@ const StoryDetails = () => {
                             <video
                                 muted
                                 loop
-                                src={story.media.fileData}
+                                src={story.media.url}
                                 autoPlay
                                 className="w-full h-auto rounded-md"
                             />

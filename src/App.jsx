@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import StoryDetails from "./pages/StoryDetails";
 import StoriesForm from "./components/Form";
 import Stories from "./pages/Stories";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/submit" element={<StoriesForm />} />
         <Route path="/editstories/:id" element={<StoriesForm />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

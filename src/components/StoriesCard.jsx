@@ -51,7 +51,7 @@ const StoriesCard = ({ stories, onDelete }) => {
           <>
             {stories.media.fileType.match('image.*') ? (
               <img
-                src={stories.media.fileData}
+                src={stories.media.url}
                 alt="Story media"
                 className="w-full h-full object-cover"
               />
@@ -59,7 +59,7 @@ const StoriesCard = ({ stories, onDelete }) => {
               <video
                 muted
                 loop
-                src={stories.media.fileData}
+                src={stories.media.url}
                 autoPlay
                 className="w-full h-full object-cover"
               />
@@ -83,7 +83,7 @@ const StoriesCard = ({ stories, onDelete }) => {
                   : stories.badge === "Stories"
                     ? "bg-green-600"
                     : "bg-gray-600"} text-white`}
-                  >
+          >
             {stories.badge?.toUpperCase() || "UNKNOWN"}
           </span>
         </div>
@@ -111,7 +111,13 @@ const StoriesCard = ({ stories, onDelete }) => {
         <div className="flex items-center justify-between mb-3 text-sm text-gray-400">
           <div className="flex items-center gap-3">
             <span className="text-emerald-400">•</span>
-            <span>{stories.date || new Date(stories.createdAt).toLocaleDateString()}</span>
+            {/* <span>{stories.date || new Date(stories.updatedAt).toLocaleDateString()}</span> */}
+            <span>{stories.date || new Date(stories.updatedAt).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}</span>
+
           </div>
         </div>
 

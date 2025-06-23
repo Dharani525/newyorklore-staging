@@ -1,0 +1,83 @@
+// import React from 'react';
+
+// const Footer = () => {
+//     return (
+//         <footer className="bg-gray-800 mt-12 py-8 border-t border-gray-700">
+//             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//                 <div className="md:flex md:items-center md:justify-between">
+//                     <div className="text-center md:text-left">
+//                         <p className="text-gray-400 text-sm">© 2025 NewYorkLore. All rights reserved.</p>
+//                     </div>
+//                     <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-6">
+//                         <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">About</a>
+//                         <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Contact</a>
+//                         <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Privacy</a>
+//                         <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Terms</a>
+//                     </div>
+//                 </div>
+//             </div>
+//         </footer>
+//     );
+// };
+
+// export default Footer;
+
+import React from 'react';
+
+const Footer = () => {
+    return (
+        <footer className="bg-gray-800 py-12 border-t border-gray-700 text-gray-300">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                {/* About */}
+                <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">About New Yor kLore</h3>
+                    <p className="text-sm text-gray-400">
+                        Discover and share the hidden stories of NYC.
+                    </p>
+                </div>
+
+                {/* Quick Links */}
+                <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Quick Links</h3>
+                    <ul className="space-y-1 text-sm">
+                        <li><a href="/" className="hover:text-emerald-400 transition">Home</a></li>
+                        <li><a href="/stories" className="hover:text-emerald-400 transition">Stories</a></li>
+                        <li><a href="/submit" className="hover:text-emerald-400 transition">Submit</a></li>
+                        <li><a href="#" className="hover:text-emerald-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                {/* Resources */}
+                <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Resources</h3>
+                    <ul className="space-y-1 text-sm">
+                        <li><a href="#" className="hover:text-emerald-400 transition">FAQ</a></li>
+                        <li><a href="#" className="hover:text-emerald-400 transition">Privacy</a></li>
+                        <li><a href="#" className="hover:text-emerald-400 transition">Terms</a></li>
+                    </ul>
+                </div>
+
+                {/* Newsletter */}
+                <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Newsletter</h3>
+                    <form className="space-y-2">
+                        <input 
+                            type="email" 
+                            placeholder="Your email" 
+                            className="w-full px-3 py-2 border border-gray-600 bg-gray-900 text-white placeholder-gray-400 rounded"
+                        />
+                        <button 
+                            type="submit" 
+                            className="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700 transition"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

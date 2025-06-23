@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
+
 const Home = () => {
   const [stories, setStories] = useState([]);
   const [displayedStories, setDisplayedStories] = useState([]);
@@ -25,9 +26,9 @@ const Home = () => {
       setError(null);
       const data = await getAllstories();
       setStories(data || []);
-      
+
       // Sort by newest first and take first 6
-      const sortedStories = [...(data || [])].sort((a, b) => 
+      const sortedStories = [...(data || [])].sort((a, b) =>
         new Date(b.createdAt) - new Date(a.createdAt)
       );
       setDisplayedStories(sortedStories.slice(0, 6));
@@ -97,9 +98,9 @@ const Home = () => {
               {displayedStories.length > 0 ? (
                 displayedStories.map((story) => (
                   <StoriesCard
-                    key={story.id} 
-                    stories={story} 
-                    onDelete={deleteStory} 
+                    key={story.id}
+                    stories={story}
+                    onDelete={deleteStory}
                   />
                 ))
               ) : (
@@ -113,7 +114,7 @@ const Home = () => {
           {/* Load More Button - Only show if there are more stories than displayed */}
           {!loading && !error && stories.length > displayedStories.length && (
             <div className="text-center mt-12">
-              <button 
+              <button
                 onClick={handleLoadMore}
                 className="px-8 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-emerald-600 text-gray-300 hover:text-emerald-400 font-medium rounded-lg transition-all duration-300"
               >
@@ -122,23 +123,6 @@ const Home = () => {
             </div>
           )}
         </main>
-
-        {/* Footer */}
-        <footer className="bg-gray-800 mt-12 py-8 border-t border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="md:flex md:items-center md:justify-between">
-              <div className="text-center md:text-left">
-                <p className="text-gray-400 text-sm">© 2025 NewYorkLore. All rights reserved.</p>
-              </div>
-              <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-6">
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">About</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Contact</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Privacy</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Terms</a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
 
       <ToastContainer />

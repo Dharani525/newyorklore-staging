@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL; // Change this to your JSON server URL
+const API_BASE_URL = import.meta.env.VITE_API_URL; 
 const API_ENDPOINT = `${API_BASE_URL}/stories`;
 
 // CREATE - Add a new stories
@@ -134,5 +134,29 @@ export const getSortedstories = async (sortBy = 'createdAt', order = 'desc') => 
   } catch (error) {
     console.error('Error fetching sorted stories:', error);
     return [];
+  }
+};
+
+
+// NEWSLETTER - Subscribe to newsletter
+export const subscribeToNewsletter = async (email) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/newsletter-subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error subscribing to newsletter:', error);
+    return null;
   }
 };

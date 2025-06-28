@@ -15,7 +15,7 @@ const Stories = () => {
     const [error, setError] = useState(null);
     const [searchQuery, setSearchQuery] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(6); // Items per page
+    const [itemsPerPage] = useState(3); // Items per page
 
     useEffect(() => {
         fetchAllStories();
